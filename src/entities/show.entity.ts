@@ -1,8 +1,9 @@
 import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm'
 import { ShowCategory } from '../enums/show-category.enum'
+// import { ShowCategory } from '../enums/show-category.enum'
 
 @Entity()
-class Movie {
+class Show {
   @PrimaryGeneratedColumn()
     id: number
 
@@ -18,8 +19,13 @@ class Movie {
   @Column({ type: 'longtext' })
     description: string
 
+  @Column({ length: 200 })
+    cover: string
+
   @Column({ type: 'enum', default: ShowCategory.MOVIE, enum: ShowCategory })
     category: ShowCategory
+
+  // @OnetoMany (( => Episode, episode => episode.show))
 }
 
-export default Movie
+export default Show

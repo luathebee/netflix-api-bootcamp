@@ -1,5 +1,5 @@
 import { DataSource } from "typeorm"
-import Movie from "../../src/entities/movie.entity"
+import { Show } from "../../src/entities/"
 
 export const AppDataSource = new DataSource({
   type: 'mysql',
@@ -8,12 +8,12 @@ export const AppDataSource = new DataSource({
   username: 'root',
   password: '123456',
   database: 'netflix',
-  entities: [Movie],
+  entities: [Show],
   synchronize: true
 })
 
 async function databaseInitialize () {
-  await AppDataSource.initialize().catch((e) => { console.error(e) })
+  await AppDataSource.initialize().catch((e) => { throw e })
   console.log('DB Connection Estabilished Successfully!')
 }
 
