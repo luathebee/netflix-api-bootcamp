@@ -1,9 +1,13 @@
 import express, { Application } from "express"
 import morgan from "morgan"
-import showsRouter from "./shows.router"
+import AuthRouter from "./auth.router"
+import ShowsRouter from "./shows.router"
+import UserRouter from "./user.router"
 
 const routers = [
-  showsRouter
+  ShowsRouter,
+  AuthRouter,
+  UserRouter
 ]
 
 const jsonParseMiddleware = express.json()

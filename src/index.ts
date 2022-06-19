@@ -1,7 +1,7 @@
 import "reflect-metadata"
 import express from "express"
 
-import databaseInitialize from "../configs/database/data-source"
+import databaseInitialize from "./infra/database/data-source"
 
 import startRouters from "./routers"
 
