@@ -32,7 +32,7 @@ export default class AuthService {
       sub: user.id,
       iat: Date.now(),
       email: user.email
-    }, "jwtsecret")
+    }, "jwtsecret") // DOTENV
 
     return {
       token
